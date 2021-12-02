@@ -1,0 +1,43 @@
+body{
+    background-color: aliceblue;
+    
+}
+
+.row{
+    background-color: rgb(247, 226, 224);
+    padding-right: 70px;
+    text-align: center;
+    
+    
+    
+
+}
+.columna{
+    width: 20%;
+    display: inline-block;
+    height: 120px;
+    align-content: center;
+    
+    margin-bottom: 70px;
+    
+}
+.columna2{
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.link{
+    display: block;
+    margin-top: 20px;
+    height: 15px;
+    margin-left: 350px;
+    color: slateblue;
+    margin-bottom: 5px;
+   
+
+}
+
+.coll{
+    margin-right: 200px;
+    
+}
