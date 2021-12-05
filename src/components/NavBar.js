@@ -1,16 +1,26 @@
-const Navbar = () => {
+import React from "react"
+import CartWidget from "../CartWidget"
+
+
+const Navbar = (props) => {
     return (
-        <div class="row"> <nav>
-            <div class="columna coll"><h2>Core Uruguay</h2>
+        <div className="row"> <nav>
+            <div className="columna col-lg-4">
+            
+            <h1>Core Uruguay</h1>
+            <CartWidget/>
             </div>
-            <div class="columna"> <img src="https://wallpaper.sc/es/ipad/wp-content/uploads/2018/08/ipad-2048x2048-thumbnail_01411-256x256.jpg" alt="logo" height="100px" width="100px"/></div>
-            <div class="columna columna2" > 
-            <a href="#" class="link">Ingresar/Registrarse</a>
-            <a href="#" class="link">Novedades</a>
-            <a href="#" class="link">Productos</a>
+            <div className="columna col-lg-4"> </div>
+            <div className="columna col-lg-4" > 
+            
+            
+            <a href="/#" className="link">Ingresar/Registrarse</a>
+            <a href="/#" className="link">Novedades</a>
+            <a href="/#" className="link">Productos</a>
             
             </div></nav>
             
+
             
         </div>
 
