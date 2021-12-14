@@ -1,44 +1,43 @@
 body{
     background-color: aliceblue;
-    
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .row{
     background-color: rgb(247, 226, 224);
-    padding-right: 70px;
+    
     text-align: center;
     padding-top: 50px;
     padding-bottom: 50px;
-    
-    
-    
-
-}
-.columna{
-    width: 20%;
-    display: inline-block;
-    height: 120px;
-    align-content: center;
-    padding-bottom: 70px;
-    
+     
 }
 
+.links{
+    margin-left: 60%;
+}
 
 .link{
-    display: block;
+    margin-left: 5%;
     margin-top: 20px;
     height: 15px;
-    margin-left: 350px;
+    
     color: slateblue;
     margin-bottom: 5px;
+    text-decoration: none;
+    
    
 
 }
 
 .bienvenida{
     padding-top: 30px;
-    margin-right: 17%;
+    margin-right: 15%;
     text-align: end;
 }
 
 
+.producto{
+        
+    height: 200px;
+    width: 150px;
+}
