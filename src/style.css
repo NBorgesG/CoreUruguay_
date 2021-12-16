@@ -1,5 +1,5 @@
 body{
-    background-color: aliceblue;
+    background-color: rgb(235, 235, 235);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -29,15 +29,41 @@ body{
 
 }
 
-.bienvenida{
+.bienvenida h2{
     padding-top: 30px;
-    margin-right: 15%;
+    margin-right: 13%;
     text-align: end;
 }
 
 
+
+
+.listaProd2{
+    
+    background-color: rgb(233, 218, 240);
+    border-bottom: darkslateblue;
+    display: inline-block;
+    width:27%;
+    margin-left: 5%;
+    padding: 60px 25px 60px 25px;
+    text-align: center;
+    
+}
+h2{
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    color: darkslategrey;
+}
+
 .producto{
-        
-    height: 200px;
-    width: 150px;
+    padding-left: 5%;
+}
+
+.botones{
+    margin-top: 10px;
+    margin-right: 35px;
+    margin-left: 35px;
+    padding-right: 15px;
+    padding-left: 15px;
 }

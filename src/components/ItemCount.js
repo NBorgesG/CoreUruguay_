@@ -3,6 +3,7 @@ import { useState } from "react";
 
 
 function ItemCount({ stock, initial, onAdd }) {
+  
   const [contador, setContador] = useState(initial);
 
   const [lista, setLista] = useState([]);
@@ -27,30 +28,30 @@ function ItemCount({ stock, initial, onAdd }) {
   };
 
   const agregarCarrito = () => {
-    setContador(1);
+    if(contador <= stock){
+      setContador(initial);
+      onAdd(contador);
+
+    }
+   
   };
 
-  const funcAux = () => {
-    agregarCarrito();
-    onAdd();
-    
-  };
+ 
 
   return (
     <>
-      
-      
-      <card>
+      <div>
         <div className="producto">
-          <h5 className="card-title">Producto</h5>
+          <h5 >Producto</h5>
           <h5> Cantidad : {contador}</h5>
           <button onClick={sumar}>Sumar</button>
           <button onClick={restar}>Restar</button>
           <div>
-            <button onClick={funcAux}>Agregar a Carrito</button>
+            <button onClick={agregarCarrito}>Agregar a Carrito</button>
           </div>
+          
         </div>
-      </card>
+      </div>
     </>
   );
 }
