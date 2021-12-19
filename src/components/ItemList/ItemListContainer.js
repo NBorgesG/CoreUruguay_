@@ -34,10 +34,9 @@ const ItemListContainer = (props) =>{
     
     
 
-    console.log(productos);
     function onAdd (cantidad) {
         notify();
-        console.log(cantidad)
+        
     }
 
     return (

@@ -4,8 +4,10 @@
         "id": 1,
         "nombre": "Base Fit Me® Matte",
         "precio": 750,
-        "sescripcion": "La base Fit Me® Matte + Poreless matifica la piel y refina los poros para un acabado naturalmente hermoso e impecable.",
+        "descripcion": "La base Fit Me® Matte + Poreless matifica la piel y refina los poros para un acabado naturalmente hermoso e impecable.",
         "stock": 15
+       
+     
 
     },
     {
@@ -14,13 +16,15 @@
         "precio": 250,
         "descripcion": "Color Sensational® Lip Color. Pintalabios de textura cremosa disponible en tonos rojos intensos, rosados hermosos y neutros sutiles. ",
         "stock": 30
+        
     },
     {
         "id": 3,
-        "nombre": "Labial UltraMate Rojo",
+        "nombre": "Lipgloss Rojo",
         "precio": 250,
         "descripcion": "Color Sensational® Lip Color. Pintalabios de textura cremosa disponible en tonos rojos intensos, rosados hermosos y neutros sutiles. ",
         "stock": 10
+       
     }
 
 ]
