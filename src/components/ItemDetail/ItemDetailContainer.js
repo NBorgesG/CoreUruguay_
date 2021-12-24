@@ -1,44 +1,46 @@
 import React from "react";  
 import { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail";
+import { useParams } from "react-router-dom";
 
 
 const ItemDetailContainer = () => {
 
-    const [items, setItems] = useState([]); 
+    const [producto, setProducto] = useState([]); 
+    const [loading, setLoading] = useState(true)
 
-
-    const url = "https://mocki.io/v1/55cb5a91-c980-4a0d-9a78-3cb948a11a4d";
+    const {id} = useParams()
     
-        const fetchData = async () => {
-          try {
-            const response = await fetch(url);
-            const json = await response.json();
-            setItems(json)
-            
-          } catch (error) {
-            console.log("error", error);
-          }
-        };
+    const url = "https://mocki.io/v1/1ebd2e52-c5e7-4c01-8f3b-a694333e1be4";
+    
+        const getProducto = async () => {
+          
+            const pedido = await fetch(url);
+            const productos = await pedido.json();
+            return productos.filter(producto=>producto.id==id)
+      };
+    
     
     useEffect(() => {
-        setTimeout(() => {
-            fetchData();
-        }, 2000);
+    getProducto()
+      .then((res) => {
+        setProducto(res);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  }, [id]);
         
-    },[]);
-
-    let item = []
-    item= items.slice(0,1)
-    console.log(item);
+    
+console.log(producto);
+   
 
     
 return (
   
     <>
-    <ItemDetail item={item}/>
-    
-    
+    <ItemDetail producto={producto}/>
     </>
 )
 

@@ -1,24 +1,31 @@
 import React from "react"
 import CartWidget from "./CartWidget"
+import { Link, NavLink } from "react-router-dom"
 
 
-const Navbar = (props) => {
+const Navbar = ({links}) => {
+    
     return (
-        <div className="row"> <nav>
-            <div className="col-lg-4">
-            
-            <h1>Core Uruguay</h1>
-            <CartWidget/>
+        <header> 
+            <div id="brand"> 
+            <Link to="/" >
+                <h1>Core Uruguay</h1>
+                <span className="material-icons">
+                filter_vintage
+                </span>
+                    </Link>  
             </div>
-            <div className="col-lg-4 links"> 
-                <a href="/#" className="link">Ingresar/Registrarse</a>
-                <a href="/#" className="link">Novedades</a>
-                <a href="/#" className="link">Productos</a></div>
+
+            <nav>
+            {links.map((link)=>{
+                return <NavLink key={link.id} to={link.href}>{link.nombre}</NavLink>
+            })} 
+
+            <NavLink to="/carrito"><CartWidget/></NavLink>
+
             </nav>
             
-
-            
-        </div>
+        </header>
 
     )
 }

@@ -1,4 +1,5 @@
 body{
+    
     background-color: rgb(235, 235, 235);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -8,31 +9,8 @@ body{
     background-color: rgb(247, 247, 244);
 }
 
-.row{
-    background-color: rgb(247, 226, 224);
-    
-    text-align: center;
-    padding-top: 50px;
-    padding-bottom: 50px;
-     
-}
 
-.links{
-    margin-left: 60%;
-}
 
-.link{
-    margin-left: 5%;
-    margin-top: 20px;
-    height: 15px;
-    
-    color: slateblue;
-    margin-bottom: 5px;
-    text-decoration: none;
-    
-   
-
-}
 
 .bienvenida h2{
     padding-top: 30px;
@@ -80,5 +58,11 @@ h2{
     text-align: center;
     margin-top: 20px;
     position: sticky;
+    padding: 0.5rem 0;
     
+}
+header{
+    text-decoration: none;
+    color: black;
+    margin-right: 50%;
 }
