@@ -7,23 +7,27 @@ const Navbar = ({links}) => {
     
     return (
         <header> 
-            <div id="brand"> 
-            <Link to="/" >
-                <h1>Core Uruguay</h1>
-                <span className="material-icons">
+            
+            <div id="brand" className="header"> 
+            <Link to="/" className="links2">
+                <h1 className="links">Core Uruguay <span className="material-icons links">
                 filter_vintage
-                </span>
+                </span></h1>
+               
+                
                     </Link>  
             </div>
 
             <nav>
             {links.map((link)=>{
-                return <NavLink key={link.id} to={link.href}>{link.nombre}</NavLink>
+                return <NavLink key={link.id} to={link.href} className="links2">{link.nombre}</NavLink>
             })} 
 
             <NavLink to="/carrito"><CartWidget/></NavLink>
 
             </nav>
+            
+            
             
         </header>
 

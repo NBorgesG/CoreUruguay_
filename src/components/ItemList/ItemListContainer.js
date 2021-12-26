@@ -1,5 +1,5 @@
 import React from "react"
-import ItemCount from "./ItemCount"
+
 import ItemList from "./ItemList";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -41,38 +41,17 @@ const ItemListContainer = (props) =>{
       .catch((err) => {
         console.log(err.message);
       });
-    }, 2000);  
+    }, 1000);  
     
       
   }, [id]);
-    console.log(productos);
-
-    function onAdd (cantidad) {
-        notify();
-        
-    }
+    
+    
 
     return (
         <>
-        
-        
-
-        
-        <ToastContainer
-              position="top-center"
-              autoClose={5000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-            />
         <div><h2>PRODUCTOS</h2></div>
         <div><ItemList productos={productos}/></div>   
-                    
-        
         </>
     )
 } 
