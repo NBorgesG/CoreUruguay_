@@ -8,6 +8,7 @@ import {BrowserRouter, Route, Routes } from "react-router-dom"
 
 
 
+
 function App () {
 
     const links = [
@@ -28,6 +29,7 @@ function App () {
                 <Route path="/productos" element={<ItemListContainer/>}/>
                 <Route path="/categoria/:id" element={<ItemListContainer/>}/>
                 <Route path="/productos/:id" element={<ItemDetailContainer/>}/>
+
                 
                 </Routes>
             </main>

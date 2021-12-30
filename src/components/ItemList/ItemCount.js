@@ -11,7 +11,11 @@ function ItemCount({ stock, initial, onAdd }) {
 
   const [lista, setLista] = useState([]);
 
+  
+
   const notify = () => toast("Producto agregado al carrito con exito !");
+
+  
 
   const sumar = () => {
     if (contador < stock) {
@@ -35,11 +39,13 @@ function ItemCount({ stock, initial, onAdd }) {
       setContador(initial);
       onAdd(contador);
       notify()
+      
 
     }
    
   };
 
+ 
  
 
   return (

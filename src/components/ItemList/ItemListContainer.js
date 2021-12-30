@@ -32,7 +32,7 @@ const ItemListContainer = (props) =>{
     
     
     useEffect(() => {
-    setTimeout(() => {
+    
       getProducto()
       .then((res) => {
         setProductos(res);
@@ -41,7 +41,7 @@ const ItemListContainer = (props) =>{
       .catch((err) => {
         console.log(err.message);
       });
-    }, 1000);  
+     
     
       
   }, [id]);

@@ -2,7 +2,7 @@ import React from "react";
 
 const Carrito = () => {
     return <>   
-    <h1>Aca iria el carrito</h1>
+    <h5>Aca iria el carrito</h5>
     
     
     </>
