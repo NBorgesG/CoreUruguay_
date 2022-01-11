@@ -1,27 +1,35 @@
-
+* {
+    margin: 0px;
+    padding: 0px;
+  }
 
 body{
     
     background-color: rgb(235, 235, 235);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin: 0;
+    
 }
-
-
 
 .listaProd2{
     background-color: rgb(235, 211, 211);
-    border-bottom: rgb(198, 194, 223);
-    display: inline-block;
-    width:27%;
-    margin-left: 5%;
+    border-bottom: rgb(198, 194, 223); 
     padding: 60px 25px 60px 25px;
+    margin: 60px 60px 60px 60px; 
+
     text-align: center;
     border-radius: 5px;
     margin-bottom: 30px;   
 }
-
-
+.contItem :hover{
+    -webkit-transform:scale(1.1);
+    transform:scale(1.1);
+}
+.contItem{
+    display: inline-block;
+    align-items: center;
+    margin-left:5%;
+    margin-right: 5%;
+}
 
 h2{
     text-align: center;
@@ -48,6 +56,7 @@ footer{
     text-align: center;
     align-items: center;
     border-top: groove;
+    margin-top: 20px;
     
 }
 footer h5{

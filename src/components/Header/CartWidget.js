@@ -1,10 +1,20 @@
 import React from "react"
+import { useContexto } from "../../CartContext"
+
+
 
 const CartWidget = () =>{
-    return (
-        <span className="material-icons links2">
+    const { cantidadTotal } = useContexto()
+    
+    return (<>
+    <span className="material-icons links2 links">
         shopping_cart
+        
         </span>
+        {cantidadTotal}
+        
+    </>
+        
         )
 }
 

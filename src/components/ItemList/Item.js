@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 const Item = ({id, title, price, stock}) =>{
     return(
         <>
+        <div className="contItem">
         <div className="listaProd2">
             
             <div><h5>{title}</h5></div>
@@ -12,6 +13,8 @@ const Item = ({id, title, price, stock}) =>{
             <div><Link to={`/productos/${id}`}>Ver Producto</Link></div>
             
         </div>
+        </div>
+        
         
         </>
     )

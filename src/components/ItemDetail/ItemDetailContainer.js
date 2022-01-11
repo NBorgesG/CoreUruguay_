@@ -17,7 +17,7 @@ const ItemDetailContainer = () => {
           
             const pedido = await fetch(url);
             const productos = await pedido.json();
-            return productos.filter(producto=>producto.id==id)
+            return productos.find((producto)=>producto.id==id)
       };
     
     

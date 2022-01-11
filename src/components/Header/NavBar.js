@@ -18,14 +18,15 @@ const Navbar = ({links}) => {
                     </Link>  
             </div>
 
-            <nav>
+            <div><nav>
             {links.map((link)=>{
                 return <NavLink key={link.id} to={link.href} className="links2">{link.nombre}</NavLink>
             })} 
 
             <NavLink to="/carrito"><CartWidget/></NavLink>
 
-            </nav>
+            </nav></div>
+            
             
             
             
