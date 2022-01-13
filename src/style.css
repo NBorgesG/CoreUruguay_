@@ -44,7 +44,9 @@ h2{
     margin-left: 35px;
     padding-right: 15px;
     padding-left: 15px;
+    box-shadow: 5px;
 }
+
 
 footer{
     
@@ -81,4 +83,28 @@ header{
 }
 nav{
     margin-left: 70%;
+}
+
+.msj{
+    text-align: center;
+    padding-top: 30px;
+}
+
+
+.container{
+   
+    height: 600px;
+    width: 80%;
+    background-color: aliceblue;
+    align-self: center;
+    margin-top: 50px;
+}
+
+.boton{
+    margin-left: 60%;
+}
+
+.precio{
+    margin-top: 30%;
+    margin-left:65%;
 }

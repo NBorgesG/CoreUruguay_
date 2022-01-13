@@ -13,37 +13,37 @@ export const useContexto = () => {
 const CustomProvider = ({children}) => {
     const [cantidadTotal, setCantidadTotal] = useState(0)
     const [carrito, setCarrito] = useState([])
-
-    const sumarTotal = () =>{
-        setCantidadTotal(cantidadTotal+1)
-    }
+    const [precioTotal, setPrecioTotal] = useState(0)
 
     
     const agregarAlCarrito = (producto, cantidad) =>{
+        
+        const copiaCarrito = [...carrito]
+        let item = copiaCarrito.find((obj)=>obj.id === producto.id)
 
-        let item = carrito.find((obj)=>obj.id === producto.id)
-
-        if (!item) {
-            const productoAux = {...producto}
-            productoAux.cantidad = cantidad
-            setCarrito([...carrito, productoAux]);
-            sumarTotal()
+        if (item) {
+            const precio = producto.precio * cantidad;
+            item.cantidad = item.cantidad + cantidad;
+            setCantidadTotal(cantidadTotal + cantidad)
+            setCarrito(copiaCarrito)
+            setPrecioTotal(precioTotal+precio)
         }else{
-            item.cantidad = item.cantidad + cantidad
-            setCarrito([...carrito])
+            const precio = producto.precio * cantidad;
+            let prodAux = {...producto, cantidad}
+            setCarrito([...carrito, prodAux]);
+            setCantidadTotal(cantidadTotal+cantidad)  
+            setPrecioTotal(precioTotal+precio)                    
         }
     }
     
-
-    const borrarDelCarrito = (info) => {
-        let item = carrito.find((obj)=> obj.id ===info.id)
-        console.log(item);
-        let index = carrito.indexOf(item);
-        carrito.splice(index, 1)
-        setCarrito([...carrito])
-        setCantidadTotal(cantidadTotal-1)
+    const borrarDelCarrito = (id, cant, precio) => {
+        let copiaCarrito =carrito.filter(obj=> obj.id !== id)     
+        setCarrito(copiaCarrito)
+        setCantidadTotal(cantidadTotal - cant)
+        setPrecioTotal(precioTotal - (precio * cant))
+        
     }
-
+    
     const vaciarCarrito = () => {
         setCarrito([])
         setCantidadTotal(0)
@@ -52,9 +52,11 @@ const CustomProvider = ({children}) => {
     const valorDelContexto  = {
         cantidadTotal,
         carrito,
+        precioTotal,
         agregarAlCarrito,
         borrarDelCarrito,
-        vaciarCarrito
+        vaciarCarrito,
+        
     }
 
     return (
