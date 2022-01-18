@@ -11,8 +11,8 @@ const ItemList = ({productos}) => {
               return (
                 <Item
                   id={prod.id}
-                  title={prod.nombre}
-                  price={prod.precio}
+                  title={prod.title}
+                  price={prod.price}
                   stock={prod.stock}
                 />
               );

@@ -17,9 +17,9 @@ const ItemDetail = ({producto}) => {
                 <h2>PRODUCTO</h2>
                 <div className="listaProd2">
                   <div>
-                    <h5>{producto.nombre}</h5>
-                    <h5>Precio: ${producto.precio}</h5>
-                    <h5>{producto.descripcion}</h5>
+                    <h5>{producto.title}</h5>
+                    <h5>Precio: ${producto.price}</h5>
+                    <h5>{producto.description}</h5>
                     <ItemCount
                       stock={producto.stock}
                       initial={1}
