@@ -1,10 +1,32 @@
 import React from "react";
 import { useContexto } from "../../CartContext";
 import { Link } from "react-router-dom";
+import { bd } from "../../firebase";
+import { addDoc, collection, updateDoc, serverTimestamp } from "firebase/firestore";
+
 
 const Carrito = () => {
 
     const {carrito, borrarDelCarrito, vaciarCarrito, precioTotal} = useContexto() ;
+
+    const finalizarCompra = () =>{
+      const collecionPedidos = collection(bd, "pedidos")
+
+      addDoc(collecionPedidos,{
+        comprador : {
+              nombre: "Maria", 
+              apellido: "Rodriguez",
+              mail: "mariaR@gmail.com"
+        }, 
+        items: carrito,
+        fecha : serverTimestamp(),
+        total: precioTotal
+
+      })
+      .then((resultado) =>{
+        vaciarCarrito()
+      })
+    }
    
     
         return (
@@ -17,8 +39,8 @@ const Carrito = () => {
                     {carrito.map((prod) => {
                         return (
                           <div>
-                            <div><li> {prod.nombre} - Precio unitario $ {prod.precio} - cantidad {prod.cantidad} - precio total $ {prod.precio * prod.cantidad}
-                            <button className="botones " onClick={()=>borrarDelCarrito(prod.id, prod.cantidad, prod.precio)}>Borrar item del carrito</button></li>
+                            <div><li> {prod.title} - Precio unitario $ {prod.price} - cantidad {prod.cantidad} - precio total $ {prod.price * prod.cantidad}
+                            <button className="botones " onClick={()=>borrarDelCarrito(prod.id, prod.cantidad, prod.price)}>Borrar item del carrito</button></li>
 
                               
                               </div>
@@ -31,6 +53,7 @@ const Carrito = () => {
                           <div className="boton"><button onClick={vaciarCarrito}>Vaciar Carrito</button></div>
                         
                         <h4 className="msj precio">Precio Total de factura: ${precioTotal}</h4>
+                        <div className="boton"><button onClick={finalizarCompra}>Finalizar compra</button></div>
                         
                      </div>
                                  

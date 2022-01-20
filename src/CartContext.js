@@ -17,18 +17,18 @@ const CustomProvider = ({children}) => {
 
     
     const agregarAlCarrito = (producto, cantidad) =>{
-        
+
         const copiaCarrito = [...carrito]
         let item = copiaCarrito.find((obj)=>obj.id === producto.id)
 
         if (item) {
-            const precio = producto.precio * cantidad;
+            const precio = producto.price * cantidad;
             item.cantidad = item.cantidad + cantidad;
             setCantidadTotal(cantidadTotal + cantidad)
             setCarrito(copiaCarrito)
             setPrecioTotal(precioTotal+precio)
         }else{
-            const precio = producto.precio * cantidad;
+            const precio = producto.price * cantidad;
             let prodAux = {...producto, cantidad}
             setCarrito([...carrito, prodAux]);
             setCantidadTotal(cantidadTotal+cantidad)  
@@ -36,11 +36,11 @@ const CustomProvider = ({children}) => {
         }
     }
     
-    const borrarDelCarrito = (id, cant, precio) => {
+    const borrarDelCarrito = (id, cant, price) => {
         let copiaCarrito =carrito.filter(obj=> obj.id !== id)     
         setCarrito(copiaCarrito)
         setCantidadTotal(cantidadTotal - cant)
-        setPrecioTotal(precioTotal - (precio * cant))
+        setPrecioTotal(precioTotal - (price * cant))
         
     }
     

@@ -4,39 +4,47 @@ import ItemList from "./ItemList";
 import { useEffect , useState} from "react";
 import { useParams } from "react-router-dom";
 import { bd } from "../../firebase";
-import {getDocs, query, collection, where} from "firebase/firestore"
+import {getDocs, query, collection, where, doc} from "firebase/firestore"
 
 
 const ItemListContainer = (props) =>{
 
     const [productos, setProductos] = useState([]); 
-    const {id} = useParams() 
-      
+    const {nombre} = useParams()
     
     useEffect(() => {
 
       const prodCollecion  = collection(bd, "productos")
 
-      if (id) {
-          const consulta = query(prodCollecion, where ("categoryId", "==" , id))
-          getDocs(consulta)
-            .then(({ docs }) =>{
-              setProductos(docs.map((doc) => ({ id: doc.id, ...doc.data() })))
-            })
-            .catch((error) => {
-              console.log(error);
-            })
-      }else{
-        getDocs(prodCollecion)
-         .then(({docs}) => {
-           setProductos(docs.map((doc) =>({ id: doc.id, ...doc.data()})))
-         })
-         .catch((error)=>{
-           console.log(error);
-         })
+      const consumirBd = (info) =>{
+        getDocs(info)
+          .then((resultado) =>{
+            const docs = resultado.docs
+            const lista = docs.map((doc)=>{
+            const id= doc.id
+            const data = doc.data()
+            const producto = {
+              id: id,
+              ...data
+            }
+            return producto;
+            
+          })
+          
+          setProductos(lista)
+        })
+        .catch((error) => {
+          console.log(error);
+        })
       }
+
+      if (nombre) {
+        const consulta = query(prodCollecion, where ("categoryId", "==" , nombre))
+        consumirBd(consulta)  
+      }else{
+        consumirBd(prodCollecion)}
       
-  }, [id]);
+  }, [nombre]);
     
     console.log(productos);
 

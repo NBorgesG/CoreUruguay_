@@ -11,26 +11,18 @@ function ItemCount({ stock, initial, onAdd }) {
 
   const [lista, setLista] = useState([]);
 
-  
-
   const notify = () => toast("Producto agregado al carrito con exito !");
-
-  
 
   const sumar = () => {
     if (contador < stock) {
       setContador(contador + 1);
       setLista();
-    } else {
-      console.log("no hay mas stock del producto");
-    }
+    } 
   };
 
   const restar = () => {
     if (contador > 1) {
       setContador(contador - 1);
-    } else {
-      console.log("noooope");
     }
   };
 

@@ -10,6 +10,7 @@ const ItemDetail = ({producto}) => {
 
     function onAdd(cantidad) {
       agregarAlCarrito(producto, cantidad);
+      
     }
 
             return (

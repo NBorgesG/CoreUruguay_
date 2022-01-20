@@ -9,8 +9,8 @@ import CustomProvider from "./CartContext.js";
 function App() {
   const links = [
     { href: "/productos", nombre: "Productos", id: 5 },
-    { href: "/categoria/1", nombre: "Bases", id: 1 },
-    { href: "/categoria/2", nombre: "Labiales", id: 2 },
+    { href: "/categoria/bases", nombre: "bases", id: 1 },
+    { href: "/categoria/labiales", nombre: "labiales", id: 2 },
     { href: "/novedades", nombre: "Novedades", id: 3 },
     { href: "/ingresar", nombre: "Ingresar/Registrarte", id: 4 },
   ];
@@ -24,7 +24,7 @@ function App() {
             <Route path="/" element={<ItemListContainer />} />
             <Route path="/carrito" element={<Carrito />} />
             <Route path="/productos" element={<ItemListContainer />} />
-            <Route path="/categoria/:id" element={<ItemListContainer />} />
+            <Route path="/categoria/:nombre" element={<ItemListContainer />} />
             <Route path="/productos/:id" element={<ItemDetailContainer />} />
           </Routes>
         </main>
