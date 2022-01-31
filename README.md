@@ -28,6 +28,6 @@ _Este proyecto fue realizado para el curso de React Js, dictado por CoderHouse_
 
 ## Autora 🤓
 - Nancy Borges
-_Estudiante de Desarrollo FrontEnd, Residente de Montevideo Uruguay Siempre buscando la superacion!_
-[Linkedin](https://www.linkedin.com/in/nancyborges3333)
-[Github](https://github.com/NBorgesG)
+- _Estudiante de Desarrollo FrontEnd, Residente de Montevideo Uruguay Siempre buscando la superacion!_
+- [Linkedin](https://www.linkedin.com/in/nancyborges3333)
+- [Github](https://github.com/NBorgesG)
