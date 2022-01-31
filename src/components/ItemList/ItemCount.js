@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import Swal from "sweetalert2";
 
 
 
@@ -11,7 +10,7 @@ function ItemCount({ stock, initial, onAdd }) {
 
   const [lista, setLista] = useState([]);
 
-  const notify = () => toast("Producto agregado al carrito con exito !");
+  
 
   const sumar = () => {
     if (contador < stock) {
@@ -30,9 +29,13 @@ function ItemCount({ stock, initial, onAdd }) {
     if(contador <= stock){
       setContador(initial);
       onAdd(contador);
-      notify()
-      
-
+      Swal.fire({
+        position: 'top-center',
+        icon: 'success',
+        title: 'Producto agregado al carrito con exito',
+        showConfirmButton: false,
+        timer: 1500
+      })
     }
    
   };
@@ -51,17 +54,7 @@ function ItemCount({ stock, initial, onAdd }) {
           <div>
             <button onClick={agregarCarrito} className="botones">Agregar a Carrito</button>
           </div>
-          <ToastContainer
-            position="top-center"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            />
+          
         </div>
       </div>
     </>

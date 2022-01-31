@@ -1,68 +1,61 @@
 import React from "react";
 import { useContexto } from "../../CartContext";
-import { Link } from "react-router-dom";
-import { bd } from "../../firebase";
-import { addDoc, collection, updateDoc, serverTimestamp } from "firebase/firestore";
-
+import { Link, NavLink} from "react-router-dom";
 
 const Carrito = () => {
 
-    const {carrito, borrarDelCarrito, vaciarCarrito, precioTotal} = useContexto() ;
+    const {carrito, borrarDelCarrito, vaciarCarrito, precioTotal, borrarUnItem, sumarUnItem} = useContexto() ;
 
-    const finalizarCompra = () =>{
-      const collecionPedidos = collection(bd, "pedidos")
-
-      addDoc(collecionPedidos,{
-        comprador : {
-              nombre: "Maria", 
-              apellido: "Rodriguez",
-              mail: "mariaR@gmail.com"
-        }, 
-        items: carrito,
-        fecha : serverTimestamp(),
-        total: precioTotal
-
-      })
-      .then((resultado) =>{
-        vaciarCarrito()
-      })
-    }
-   
+    
     
         return (
             <> 
-            <div className="container">
+            
+            <div className="containerCarrito">
+            
             
                 {carrito.length > 0 ? (
-                  <>
-                  <ul>
-                    {carrito.map((prod) => {
-                        return (
-                          <div>
-                            <div><li> {prod.title} - Precio unitario $ {prod.price} - cantidad {prod.cantidad} - precio total $ {prod.price * prod.cantidad}
-                            <button className="botones " onClick={()=>borrarDelCarrito(prod.id, prod.cantidad, prod.price)}>Borrar item del carrito</button></li>
-
-                              
-                              </div>
+                  <div >
+                    <div><h4>Carrito</h4></div>
+                  <div>
+                  
+                  {carrito.map((prod) => {
+                      return (
+                        <div className="itemCarrito">
+                          <img src="" alt="" />
+                          
+                          <div className="lineaCarrito"> <div className="linea2Carrito">
+                          <h5>{prod.title} - Precio $ {prod.price} - cantidad {prod.cantidad} - Total $ {prod.price * prod.cantidad}
+                          <button className="botones material-icons" onClick={()=>borrarUnItem(prod)}>remove</button>
+                          <button className="botones material-icons" onClick={()=>sumarUnItem(prod)}>add</button>
+                          <button className="botones material-icons" onClick={()=>borrarDelCarrito(prod)}> delete </button>  
+                          </h5>
                           </div>
-                        );
-                      })}
-                      
-                     </ul>
-                     <div >
-                          <div className="boton"><button onClick={vaciarCarrito}>Vaciar Carrito</button></div>
+                            </div>
+                        </div>
+                      );
+                    })}
+                   </div>
+                  
+                     <div className="itemCarrito" >
+                          
+                        <div className="precioFact"><h5 >Precio Total de factura: ${precioTotal}</h5></div>
+                        <div className="btns">
+                        <button onClick={vaciarCarrito} >Vaciar Carrito</button>
+                          <NavLink to="/payment"> 
+                        <button >Finalizar compra</button>
+                        </NavLink>
                         
-                        <h4 className="msj precio">Precio Total de factura: ${precioTotal}</h4>
-                        <div className="boton"><button onClick={finalizarCompra}>Finalizar compra</button></div>
+                        </div>
+                        
+                        
                         
                      </div>
-                                 
-                </>
-                    
-                ): 
+                   </div>
+              ): 
                 <>
                 <div className="msj">
-                  <h4>No Agregaste Ningun Articulo Al Carrito</h4> 
+                  <h4>Tu carrito esta vacio!! </h4> 
                       <Link to={"/productos"}>
                         <button className="botones">Ver todos los productos</button>
                       </Link></div>

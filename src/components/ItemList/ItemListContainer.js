@@ -46,11 +46,11 @@ const ItemListContainer = (props) =>{
       
   }, [nombre]);
     
-    console.log(productos);
+    
 
     return (
         <>
-        <div><h2>PRODUCTOS</h2></div>
+        <div className="productos"><h2>PRODUCTOS</h2></div>
         
         
         <div><ItemList productos={productos}/></div>   

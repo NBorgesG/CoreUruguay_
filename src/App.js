@@ -3,6 +3,7 @@ import ItemListContainer from "./components/ItemList/ItemListContainer.js";
 import ItemDetailContainer from "./components/ItemDetail/ItemDetailContainer.js";
 import Footer from "./components/Footer/Footer.js";
 import Carrito from "./components/Header/Carrito.js";
+import Payment from "./components/Payment/Payment.js";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CustomProvider from "./CartContext.js";
 
@@ -26,6 +27,7 @@ function App() {
             <Route path="/productos" element={<ItemListContainer />} />
             <Route path="/categoria/:nombre" element={<ItemListContainer />} />
             <Route path="/productos/:id" element={<ItemDetailContainer />} />
+            <Route path="/payment" element={<Payment/>}/>
           </Routes>
         </main>
 

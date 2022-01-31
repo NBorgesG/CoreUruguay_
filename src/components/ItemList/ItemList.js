@@ -6,7 +6,7 @@ const ItemList = ({productos}) => {
   
     if (productos !== []) {
       return (<>
-          <div className="listaProd">
+          <div className="listaProd2">
             {productos.map((prod) => {
               return (
                 <Item
@@ -14,6 +14,7 @@ const ItemList = ({productos}) => {
                   title={prod.title}
                   price={prod.price}
                   stock={prod.stock}
+                  img={prod.image}
                 />
               );
             })}

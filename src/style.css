@@ -1,50 +1,74 @@
-* {
-    margin: 0px;
-    padding: 0px;
-  }
+
+.html{
+    position: relative;
+    
+}
 
 body{
+    background-image: url(https://cdn.pixabay.com/photo/2021/12/04/19/09/background-6845828_960_720.png);
     
-    background-color: rgb(235, 235, 235);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    
+    margin: 0%;
 }
+
+
 
 .listaProd2{
-    background-color: rgb(235, 211, 211);
-    border-bottom: rgb(198, 194, 223); 
-    padding: 60px 25px 60px 25px;
-    margin: 60px 60px 60px 60px; 
-
+    background-color:rgb(235, 211, 211);
     text-align: center;
     border-radius: 5px;
-    margin-bottom: 30px;   
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-right: 15%;
+    margin-left: 15%;
+    margin-top: 30px;
+    
 }
-.contItem :hover{
-    -webkit-transform:scale(1.1);
-    transform:scale(1.1);
+
+.listaProd2 img{
+    height: 200px;
+    width: 150px;
+    margin-bottom: 10px;
+    opacity: 0.7;
 }
+
+
+ .listaProd2 img:hover{
+    opacity: 1;
+}
+
+
+.productos{
+    background-color: lavender;
+    margin-top: 30px;
+}
+
+
 .contItem{
     display: inline-block;
     align-items: center;
     margin-left:5%;
     margin-right: 5%;
+
 }
 
 h2{
     text-align: center;
     padding-top: 50px;
     padding-bottom: 30px;
-    color: darkslategrey;
+    color: rgb(48, 47, 79);
+    font-weight: bolder;
+    font-size: 40px;
 }
 
 .botones{
-    margin-top: 10px;
-    margin-right: 35px;
+    margin-top: 25px;
+    
     margin-left: 35px;
     padding-right: 15px;
     padding-left: 15px;
-    box-shadow: 5px;
+    
+    box-shadow: 10px;
 }
 
 
@@ -54,15 +78,9 @@ footer{
     bottom: 0;
     background-color: rgb(245, 237, 252);
     width: 100%;
-    height: 10%;
     text-align: center;
-    align-items: center;
     border-top: groove;
-    margin-top: 20px;
-    
-}
-footer h5{
-    margin-top: 35px;
+    margin-top: 10%;
 }
 
 
@@ -70,6 +88,7 @@ footer h5{
     text-decoration: none;
     margin-left:45px;
 }
+
 .links2{
     margin-left: 2%;
     text-decoration: none;
@@ -80,6 +99,7 @@ footer h5{
 header{
     background-color: rgb(245, 237, 252);
     border-bottom: groove;
+    padding-top: 20px;
 }
 nav{
     margin-left: 70%;
@@ -91,13 +111,39 @@ nav{
 }
 
 
-.container{
+.containerCarrito{
    
-    height: 600px;
+    height: auto;
     width: 80%;
-    background-color: aliceblue;
-    align-self: center;
+    background-color: rgb(255, 255, 255);
+    display: inline-block;
+    padding-top: 20px;
     margin-top: 50px;
+    margin-bottom: 100px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-bottom: 50px;
+   
+}
+.containerCarrito h4{
+    text-align: center;
+}
+
+.itemCarrito{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 25px;
+    
+    
+}
+.lineaCarrito .linea2Carrito {
+    margin-right: 310px;
+}
+
+.itemCarrito .precioFact h5{
+    text-align: end;
+    padding-right: 3%;
+    
 }
 
 .boton{
@@ -107,4 +153,45 @@ nav{
 .precio{
     margin-top: 30%;
     margin-left:65%;
+}
+
+
+.btnVaciar{
+    margin-left: 2%;
+}
+
+.btns{
+    margin-left: 79%;
+    margin-top: 25px;
+    
+}
+.btns button{
+    margin-right: 10px;
+}
+
+.divPrinForm{
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 50px;
+    background-color: rgb(253, 244, 252);
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    width: auto;
+
+}
+
+.divForm form input{
+    
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.divForm form{
+    padding-top: 20px;
+    align-content: center;
+    width: 100%;
 }

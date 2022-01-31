@@ -8,10 +8,10 @@ const Navbar = ({links}) => {
     return (
         <header> 
             
-            <div id="brand" className="header"> 
-            <Link to="/" className="links2">
-                <h1 className="links">Core Uruguay <span className="material-icons links">
-                filter_vintage
+            <div id="brand" className="header links"> 
+            <Link to="/" className="links2 links">
+                <h1 className="links">CORE URUGUAY <span className="material-icons links">
+                
                 </span></h1>
                
                 

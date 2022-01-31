@@ -10,15 +10,14 @@ const ItemDetail = ({producto}) => {
 
     function onAdd(cantidad) {
       agregarAlCarrito(producto, cantidad);
-      
     }
-
             return (
               <>
                 <h2>PRODUCTO</h2>
                 <div className="listaProd2">
                   <div>
                     <h5>{producto.title}</h5>
+                    <div><img src={producto.image} alt="" /></div>
                     <h5>Precio: ${producto.price}</h5>
                     <h5>{producto.description}</h5>
                     <ItemCount
@@ -27,8 +26,9 @@ const ItemDetail = ({producto}) => {
                       onAdd={onAdd}
                     />
                     <NavLink to="/carrito">
-                      <button className="botones">Finalizar Compra</button>
+                      <button className="botones">Ir al Carrito</button>
                     </NavLink>
+                    <NavLink to="/productos"><button className="botones">Ir a productos</button></NavLink>
                   </div>
                 </div>
               </>

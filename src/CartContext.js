@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import Swal from "sweetalert2";
 
 const contexto = createContext();
 
@@ -36,19 +37,52 @@ const CustomProvider = ({children}) => {
         }
     }
     
-    const borrarDelCarrito = (id, cant, price) => {
-        let copiaCarrito =carrito.filter(obj=> obj.id !== id)     
+    const borrarDelCarrito = (item) => {
+        let copiaCarrito =carrito.filter(obj=> obj.id !== item.id)     
         setCarrito(copiaCarrito)
-        setCantidadTotal(cantidadTotal - cant)
-        setPrecioTotal(precioTotal - (price * cant))
+        setCantidadTotal(cantidadTotal - item.cantidad)
+        setPrecioTotal(precioTotal - (item.price * item.cantidad))
         
     }
     
     const vaciarCarrito = () => {
         setCarrito([])
         setCantidadTotal(0)
+        setPrecioTotal(0)
+    }
+    const borrarUnItem = (item) =>{
+        let copiaCarrito = [...carrito]
+        let objeto = copiaCarrito.find((obj)=> obj.id==item.id);
+        
+        if (objeto.cantidad >1) {
+            objeto.cantidad = objeto.cantidad -1;
+            setCarrito(copiaCarrito)
+            setPrecioTotal(precioTotal - objeto.price)
+            setCantidadTotal(cantidadTotal -1)
+        }else{
+            borrarDelCarrito(item)
+        }
+        
     }
 
+    const sumarUnItem = (item) => {
+        let copiaCarrito = [...carrito]
+        let objeto = copiaCarrito.find((obj)=> obj.id==item.id);
+        let price = item.price*1;
+        if (objeto.cantidad < objeto.stock) {
+            objeto.cantidad = objeto.cantidad + 1;
+            setCarrito(copiaCarrito)
+            setPrecioTotal(precioTotal + price)
+            setCantidadTotal(cantidadTotal + 1)
+        }else{
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'No hay mas stock del producto seleccionado!'
+            })
+        }
+        
+    }
     const valorDelContexto  = {
         cantidadTotal,
         carrito,
@@ -56,6 +90,8 @@ const CustomProvider = ({children}) => {
         agregarAlCarrito,
         borrarDelCarrito,
         vaciarCarrito,
+        borrarUnItem,
+        sumarUnItem
         
     }
 
