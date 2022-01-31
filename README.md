@@ -13,7 +13,7 @@ _Este proyecto fue realizado para el curso de React Js, dictado por CoderHouse_
 
 ## DEMO
 
-<img src="./public/assets/animacion.gif" />
+<img src="./public/assets/Animation.gif" />
 
 ## HERRAMIENTAS UTILIZADAS 🛠️
 - `React JS`
